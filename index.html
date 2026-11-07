@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071b16">
+  <title>KINOY MONEY TRACKER</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">PERSONAL FINANCE</p>
+        <h1>KINOY <span>MONEY TRACKER</span></h1>
+        <p class="muted">Catat uang masuk dan keluar dengan mudah.</p>
+      </div>
+      <div class="logo">K</div>
+    </header>
+
+    <section class="balance-card">
+      <p class="card-label">TOTAL SALDO</p>
+      <h2 id="balance">Rp0</h2>
+      <p class="balance-note">Ringkasan seluruh transaksi kamu</p>
+      <div class="balance-decoration"></div>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card income">
+        <span class="summary-icon">↗</span>
+        <p>Uang Masuk</p>
+        <h3 id="income">Rp0</h3>
+      </article>
+      <article class="summary-card expense">
+        <span class="summary-icon">↘</span>
+        <p>Uang Keluar</p>
+        <h3 id="expense">Rp0</h3>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CATATAN BARU</p>
+          <h2>Tambah transaksi</h2>
+        </div>
+        <span class="heading-mark">＋</span>
+      </div>
+      <form id="transaction-form">
+        <label for="type">Jenis transaksi</label>
+        <select id="type" required>
+          <option value="income">Uang masuk</option>
+          <option value="expense">Uang keluar</option>
+        </select>
+
+        <label for="amount">Jumlah uang (Rp)</label>
+        <input id="amount" type="number" min="1" step="1" placeholder="Contoh: 25000" required>
+
+        <label for="note">Keterangan</label>
+        <input id="note" type="text" maxlength="60" placeholder="Contoh: Jual item game" required>
+
+        <label for="date">Tanggal</label>
+        <input id="date" type="date" required>
+
+        <button class="primary-button" type="submit">Simpan transaksi <span>＋</span></button>
+      </form>
+    </section>
+
+    <section class="panel history-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">RIWAYAT</p>
+          <h2>Transaksi terakhir</h2>
+        </div>
+        <button id="clear-button" class="text-button" type="button">Hapus semua</button>
+      </div>
+      <div id="transactions" class="transactions">
+        <div class="empty-state">
+          <span>◷</span>
+          <p>Belum ada transaksi.</p>
+          <small>Transaksi yang kamu simpan akan muncul di sini.</small>
+        </div>
+      </div>
+    </section>
+
+    <footer> dibuat dengan semangat oleh <strong>KINOY</strong> · Data tersimpan di browser perangkat ini.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
